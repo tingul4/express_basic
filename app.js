@@ -19,6 +19,12 @@ app.get('/food', (req, res) => {
 app.get('/popular/languages', (req, res) => {
   res.send('JavaScript is a popular language')
 })
+
+// change into dynamic routes with params ':language'
+app.get('/popular/languages/:language', (req, res) => {
+  res.send(`<h1>${req.params.language} is a popular language</h1>`)
+})
+
 // Listen the server when it started
 app.listen(port, () => {
   console.log(`Express is running on http://localhost:${port}`)
